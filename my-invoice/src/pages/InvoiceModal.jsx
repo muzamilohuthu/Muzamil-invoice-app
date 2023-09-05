@@ -84,6 +84,8 @@ const InvoiceModal = ({
       });
   };
 
+  
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
