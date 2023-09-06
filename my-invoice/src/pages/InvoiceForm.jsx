@@ -15,10 +15,10 @@ const today = date.toLocaleDateString('en-GB', {
 
 const InvoiceForm = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [discount, setDiscount] = useState('');
-  const [tax, setTax] = useState('');
+  const [discount, setDiscount] = useState(5);
+  const [tax, setTax] = useState(18);
   const [invoiceNumber, setInvoiceNumber] = useState(1);
-  const [cashierName, setCashierName] = useState('');
+  const [cashierName, setCashierName] = useState("MUZAMIL CLOTHING");
   const [customerName, setCustomerName] = useState('');
   const [items, setItems] = useState([
     {
@@ -156,11 +156,11 @@ const InvoiceForm = () => {
         </div>
         <table className="w-full p-4 text-left">
           <thead>
-            <tr className="border-b border-gray-900/10 text-sm md:text-base">
-              <th>ITEM</th>
+            <tr className=" bg-gradient-to-r from-cyan-500 to-blue-500">
+              <th className='px-3'>ITEM</th>
               <th>QTY</th>
               <th className="text-center">PRICE</th>
-              <th className="text-center">ACTION</th>
+              <th className="text-center px-3">ACTION</th>
             </tr>
           </thead>
           <tbody>
@@ -209,14 +209,9 @@ const InvoiceForm = () => {
           </div>
         </div>
       </div>
-      <div className="basis-1/4 bg-transparent">
+      <div className="basis-1/4 bg-white my-6 mx-1 rounded-lg  pe-5">
         <div className="sticky top-0 z-10 space-y-4 divide-y divide-gray-900/10 pb-8 md:pt-6 md:pl-4">
-          <button
-            className="w-full rounded-md bg-blue-500 py-2 text-sm text-white shadow-sm hover:bg-blue-600"
-            type="submit"
-          >
-            Review Invoice
-          </button>
+         
           <InvoiceModal
             isOpen={isOpen}
             setIsOpen={setIsOpen}
@@ -276,11 +271,22 @@ const InvoiceForm = () => {
                 <span className="rounded-r-md bg-gray-200 py-2 px-4 text-gray-500 shadow-sm">
                   %
                 </span>
+                
+      
               </div>
+             
             </div>
+            <button
+            className="w-full rounded-md bg-blue-500 py-2 text-sm text-white shadow-sm hover:bg-blue-600 "
+            type="submit"
+          >
+            Review Invoice
+          </button>
           </div>
         </div>
+        
       </div>
+     
     </form>
   );
 };

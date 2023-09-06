@@ -11,7 +11,7 @@ const InvoiceItem = ({ id, name, qty, price, onDeleteItem, onEdtiItem }) => {
 
   return (
     <tr>
-      <td className="w-full">
+      <td className="w-full ">
         <InvoiceField
           onEditItem={(event) => onEdtiItem(event)}
           cellData={{
@@ -20,6 +20,7 @@ const InvoiceItem = ({ id, name, qty, price, onDeleteItem, onEdtiItem }) => {
             name: 'name',
             id: id,
             value: name,
+           
           }}
         />
       </td>
@@ -56,7 +57,7 @@ const InvoiceItem = ({ id, name, qty, price, onDeleteItem, onEdtiItem }) => {
       </td>
       <td className="flex items-center justify-center">
         <button
-          className="rounded-md bg-red-500 p-2 text-white shadow-sm transition-colors duration-200 hover:bg-red-600"
+          className=" bg-red-500   hover:bg-red-600 text-white px-1 py-1"
           onClick={deleteItemHandler}
         >
        < MdDeleteForever className='text-2xl' />

@@ -14,6 +14,7 @@ const InvoiceField = ({ onEditItem, cellData }) => {
       value={cellData.value}
       onChange={onEditItem}
       required
+      width={100}
     />
   );
 };

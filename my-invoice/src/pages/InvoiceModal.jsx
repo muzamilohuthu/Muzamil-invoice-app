@@ -83,8 +83,14 @@ const InvoiceModal = ({
         console.error('oops, something went wrong!', error);
       });
   };
+  const date = new Date();
+  const today = date.toLocaleDateString('en-GB', {
+    month: 'numeric',
+    day: 'numeric',
+    year: 'numeric',
+  });
 
-  
+  const  timenow = date.toLocaleTimeString();
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -135,6 +141,10 @@ const InvoiceModal = ({
                     <span>{invoiceInfo.cashierName}</span>
                     <span className="font-bold">Customer:</span>
                     <span>{invoiceInfo.customerName}</span>
+                    <span className="font-bold">Date:</span>
+                    <span>{today}</span>
+                    <span className="font-bold">Time:</span>
+                    <span>{timenow}</span>
                   </div>
 
                   <table className="w-full text-left">
@@ -188,9 +198,9 @@ const InvoiceModal = ({
                     </div>
                   </div>
                 </div>
-                <div >
-             <span className=' left-0 ms-2 text-lg font-bold'> Customer Signarure </span> 
-             <span className=' right-0 me-2 text-lg font-bold'>  Authorised Signarure</span>
+                <div  className='flex items-stretch'>
+             <div className=' text-lg font-bold py-12 pe-3'> Customer Signarure </div> 
+             <div className=' text-lg font-bold py-12 ps-12'>  Authorised Signarure</div>
               </div>
               </div>
               <div className="mt-4 flex space-x-2 px-4 pb-6">
