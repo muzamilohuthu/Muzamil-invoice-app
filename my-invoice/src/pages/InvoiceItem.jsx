@@ -10,7 +10,8 @@ const InvoiceItem = ({ id, name, qty, price, onDeleteItem, onEdtiItem }) => {
   };
 
   return (
-    <tr>
+
+    <tr className='my-0.5'>
       <td className="w-full ">
         <InvoiceField
           onEditItem={(event) => onEdtiItem(event)}
